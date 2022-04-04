@@ -210,7 +210,7 @@ def auth_users_markup(_, status: Union[bool, str] = None):
 
 def playmode_users_markup(
     _,
-    Direct: Union[bool, str] = None,
+    Inline: Union[bool, str] = None,
     Group: Union[bool, str] = None,
     Playtype: Union[bool, str] = None,
 ):
@@ -220,7 +220,7 @@ def playmode_users_markup(
                 text=_["ST_B_19"], callback_data="SEARCHANSWER"
             ),
             InlineKeyboardButton(
-                text=_["ST_B_20"] if Direct == True else _["ST_B_21"],
+                text=_["ST_B_20"] if Inline == True else _["ST_B_21"],
                 callback_data="MODECHANGE",
             ),
         ],
