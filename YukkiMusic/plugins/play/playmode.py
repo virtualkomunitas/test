@@ -31,8 +31,8 @@ PLAYMODE_COMMAND = get_command("PLAYMODE_COMMAND")
 @language
 async def playmode_(client, message: Message, _):
     playmode = await get_playmode(message.chat.id)
-    if playmode == "Direct":
-        Direct = True
+    if playmode == "Inline":
+        Inline = True
     else:
         Direct = None
     is_non_admin = await is_nonadmin_chat(message.chat.id)
@@ -45,7 +45,7 @@ async def playmode_(client, message: Message, _):
         Playtype = None
     else:
         Playtype = True
-    buttons = playmode_users_markup(_, Direct, Group, Playtype)
+    buttons = playmode_users_markup(_, Inline, Group, Playtype)
     response = await message.reply_text(
         _["playmode_1"].format(message.chat.title),
         reply_markup=InlineKeyboardMarkup(buttons),
