@@ -40,7 +40,7 @@ def stream_markup(_, videoid):
                 callback_data=f"add_playlist {videoid}",
             ),
             InlineKeyboardButton(
-                text=_["S_B_7"], user_id=OWNER""
+                text=_["S_B_7"], user_id=OWNER
             ),
         ],
         [
